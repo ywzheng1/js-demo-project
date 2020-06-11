@@ -1,5 +1,7 @@
 const navigation = () => {
+    
     console.log('navigation loaded');
+
     const navContent = [
         {
             title: 'Link 1',
