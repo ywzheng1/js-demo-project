@@ -1,10 +1,15 @@
 import css from './index.scss';
 
 import { navigation } from './js/navigation';
-import { fetchData } from './js/fetch-data';
+import { fetchPostList } from './js/fetch-posts';
 
 navigation();
-fetchData(
+fetchPostList(
     'https://jsonplaceholder.typicode.com/posts?_page=0', 
     '#main-content'
+);
+
+fetchPostList(
+    'https://jsonplaceholder.typicode.com/posts?_start=0&_end=5', 
+    '#top-five-content'
 );

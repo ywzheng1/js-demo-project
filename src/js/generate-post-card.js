@@ -8,16 +8,13 @@ const generatePostCard = (data, targetNode) => {
     div.setAttribute('class', 'post-card');
     div.setAttribute('key', data.id)
 
-    // only give this onclick to detail post option on homepage
-    if(targetNode === '#main-content') {
-        const openCard = (id) => {
-            // redirect page to post-detail.html
-            window.location.href = `./src/page/post-detail.html?id=${id}`;
-        }
-        // Using callback on 'onclick' event 
-        // to have prevent function fired on page load
-        div.onclick = () => openCard(data.id)
+    const openCard = (id) => {
+        // redirect page to post-detail.html
+        window.location.href = `./src/page/post-detail.html?id=${id}`;
     }
+    // Using callback on 'onclick' event 
+    // to have prevent function fired on page load
+    div.onclick = () => openCard(data.id)
 
     div.textContent = data.title;
 

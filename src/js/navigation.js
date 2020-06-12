@@ -3,27 +3,30 @@ const navigation = () => {
     console.log('navigation loaded');
 
     const navContent = [
+        // {
+        //     title: 'Most Popular',
+        //     link: './src/page/most-popular.html'
+        // },
         {
-            title: 'Link 1',
-            link: '1'
+            title: 'Fake Link',
+            link: '/'
         },
         {
-            title: 'Link 2',
-            link: '//amazon.com'
+            title: 'Fake Link 2',
+            link: '/'
         },
         {
-            title: 'Link 3',
-            link: './src/page/post-detail.html'
+            title: 'Fake Link 3',
+            link: '/'
         }
     ]
 
-    const nav = document.querySelector('#sidebar');
+    const nav = document.querySelector('#navigation');
 
     navContent.forEach(content => {
         const aTag = document.createElement('a');
         aTag.textContent = content.title;
         aTag.href = content.link;
-        // aTag.onclick = redirect;
         aTag.setAttribute('class', 'nav-link');
         nav.appendChild(aTag);
     })
