@@ -7,6 +7,11 @@ module.exports = {
   target: "web",
   entry: './src/index.js',
 
+  // entry: {
+  //   app: './src/index.js',
+  //   adminApp: './src/js/post-detail.js'
+  // },
+
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'

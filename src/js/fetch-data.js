@@ -1,10 +1,10 @@
-import { generatePostCard } from './generatePostCard';
+import { generatePostCard } from './generate-post-card.js';
 
-const fetchData = () => {
-    console.log('fetch data component loaded!');
+const fetchData = (api, targetNode) => {
+    console.log('fetch data loaded!');
 
     // store it in this scope because we need to reuse it many times
-    const app = document.querySelector('#main-content');
+    const app = document.querySelector(targetNode);
 
     // loading
     const toggleSpinner = (isLoading) => {
@@ -39,9 +39,9 @@ const fetchData = () => {
          * GET /posts/1/comments?_start=20&_end=30
          * GET /posts/1/comments?_start=20&_limit=10
          */
-        fetch('https://jsonplaceholder.typicode.com/posts?_page=0')
+        fetch(api)
             .then(response => response.json())
-            .then(data => generateTodo(data))
+            .then(data => generatePost(data))
             // remove spinner once we got the data
             .then(() => toggleSpinner(false))
             .catch(error => {
@@ -56,10 +56,10 @@ const fetchData = () => {
     // Create an unordered list
     const list = document.createElement('ul');
 
-    const generateTodo = (todoData) => {
+    const generatePost = (todoData) => {
         todoData.forEach((data) => {
             // pass each post data to this function and generate cards
-            generatePostCard(data);
+            generatePostCard(data, targetNode);
         });
     }
 }

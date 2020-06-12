@@ -1,7 +1,10 @@
 import css from './index.scss';
 
 import { navigation } from './js/navigation';
-import { fetchData } from './js/fetchData';
+import { fetchData } from './js/fetch-data';
 
 navigation();
-fetchData();
+fetchData(
+    'https://jsonplaceholder.typicode.com/posts?_page=0', 
+    '#main-content'
+);
