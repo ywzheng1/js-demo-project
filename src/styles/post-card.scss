@@ -1,6 +1,8 @@
 .post-card {
-    width : 20rem;
-    height: 10rem;
-    border: 1px solid black;
-    margin: 0.5rem;
+    width        : 20rem;
+    height       : 10rem;
+    border-radius: 5px;
+    box-shadow   : 6px 6px 12px #f1f1f1;
+    margin       : 1rem;
+    padding      : 1rem;
 }

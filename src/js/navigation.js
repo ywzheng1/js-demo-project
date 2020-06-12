@@ -1,15 +1,19 @@
 const navigation = () => {
-    
+
     console.log('navigation loaded');
 
     const navContent = [
         {
             title: 'Link 1',
-            link: 'google.com'
+            link: '1'
         },
         {
             title: 'Link 2',
-            link: 'amazon.com'
+            link: '//amazon.com'
+        },
+        {
+            title: 'Link 3',
+            link: './src/page/post-detail.html'
         }
     ]
 
@@ -19,9 +23,12 @@ const navigation = () => {
         const aTag = document.createElement('a');
         aTag.textContent = content.title;
         aTag.href = content.link;
+        // aTag.onclick = redirect;
         aTag.setAttribute('class', 'nav-link');
         nav.appendChild(aTag);
     })
+
+
 }
 
 export { navigation };
