@@ -5,4 +5,4 @@ const showErrorMessage = (error, targetNode) => {
     app.appendChild(div);
 }
 
-export { showErrorMessage }
+module.exports = showErrorMessage;

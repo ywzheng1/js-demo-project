@@ -1,6 +1,10 @@
-import { generatePostDetail } from './generate-post-detail.js';
-import { toggleSpinner } from './toggle-spinner.js';
-import { showErrorMessage } from './error-message.js';
+// import { generatePostDetail } from './generate-post-detail.js';
+// import { toggleSpinner } from './toggle-spinner.js';
+// import { showErrorMessage } from './error-message.js';
+
+const generatePostDetail = require('./generate-post-detail.js');
+const toggleSpinner = require('./toggle-spinner.js');
+const showErrorMessage = require('./error-message.js');
 
 const fetchPost = (api, targetNode) => {
     console.log('fetch data loaded!');
@@ -30,4 +34,4 @@ const fetchPost = (api, targetNode) => {
 
 }
 
-export { fetchPost };
+module.exports = fetchPost;

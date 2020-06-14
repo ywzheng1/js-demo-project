@@ -5,24 +5,24 @@ const generatePostDetail = (data, targetNode) => {
     const content = document.querySelector(targetNode);
 
     // title
-    const title = document.createElement('h2');
-    title.setAttribute('class', 'post-card');
-    title.textContent = `Title: ${data[0].title}`;
+    const title = document.createElement('h1');
+    title.textContent = data[0].title;
+    title.setAttribute('class', 'post-detail-title');
     content.appendChild(title);
 
     // user
     const userElement = document.createElement('p');
-    userElement.setAttribute('class', 'post-card');
-    userElement.textContent = `User ID: ${data[0].userId}`;
+    userElement.textContent = `User ID: ${data[0].id}`;
+    userElement.setAttribute('class', 'post-detail-author-id');
     content.appendChild(userElement);
 
     // detail
     const detailElement = document.createElement('p');
-    detailElement.setAttribute('class', 'post-card');
     detailElement.setAttribute('key', data[0].id)
     detailElement.textContent = data[0].body;
+    detailElement.setAttribute('class', 'post-detail-body');
     content.appendChild(detailElement);
 
 }
 
-export { generatePostDetail };
+module.exports = generatePostDetail;

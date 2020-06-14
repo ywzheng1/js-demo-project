@@ -1,6 +1,10 @@
-import { generatePostCard } from './generate-post-card.js';
-import { toggleSpinner } from './toggle-spinner.js';
-import { showErrorMessage } from './error-message.js';
+// import { generatePostCard } from './generate-post-card.js';
+// import { toggleSpinner } from './toggle-spinner.js';
+// import { showErrorMessage } from './error-message.js';
+
+const generatePostCard = require('./generate-post-card.js');
+const toggleSpinner = require('./toggle-spinner.js');
+const showErrorMessage = require('./error-message.js');
 
 const fetchPostList = (api, targetNode) => {
     console.log('fetch data loaded!');
@@ -40,4 +44,4 @@ const fetchPostList = (api, targetNode) => {
     }
 }
 
-export { fetchPostList };
+module.exports = fetchPostList;

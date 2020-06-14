@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<title>JavaScript Demo Project</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/index.css">
 	</head>
 
 	<body>
@@ -11,24 +12,29 @@
 			<!-- Navigation -->
 			<sidebar id='sidebar'>
 				<nav id='navigation'>
-					<h3>Demos</h3>
+					<h3>Possssst.</h3>
 				</nav>
 				
-				<div id='top-five-content'>
-					<h4>Top 5 Popular</h4>
-				</div>
 			</sidebar>
 			<!-- End of Navigation -->
 
 			<!-- Main Content -->
 			<div id="main-content-wrapper">
-				<h2>Posts</h2>
+				<h2>All Posts</h2>
+				<div id='main-content-hero'></div>
 				<div id='main-content'></div>
 			</div>
 			<!-- End of Main Content -->
+
+			<!-- Top 5 -->
+			<div id='top-five-content'>
+				<h4>Top 5 Popular</h4>
+			</div>
+			<!-- End of Top 5 -->
+
 		</div>
 
-		<script type="text/javascript" src='./src/index.js'></script>
+		<script type="module" src='./js/bundle.js'></script>
 
 	</body>
 </html>

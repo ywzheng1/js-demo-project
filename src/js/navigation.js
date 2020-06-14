@@ -34,4 +34,6 @@ const navigation = () => {
 
 }
 
-export { navigation };
+module.exports = navigation;
+
+// export { navigation };

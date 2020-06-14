@@ -14,4 +14,4 @@ const toggleSpinner = (isLoading, targetNode) => {
     }
 }
 
-export { toggleSpinner };
+module.exports = toggleSpinner;

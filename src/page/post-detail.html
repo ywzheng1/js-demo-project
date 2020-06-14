@@ -4,15 +4,28 @@
 		<meta charset="utf-8" />
 		<title>Post Detail</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/index.css">
 	</head>
 
 	<body>
-		<h1>post detail</h1>
 
-		<div id='post-detail-content'></div>
+		<div id='post-detail-page'>
+			<!-- Navigation -->
+			<sidebar id='sidebar'>
+				<nav id='navigation'>
+					<h3>Possssst.</h3>
+				</nav>
+				<button id='go-back-btn'>Go Back</button>
+			</sidebar>
+			<!-- End of Navigation -->
+
+			<div id='post-detail-content'>
+				<div class='post-detail-hero'></div>
+			</div>
+		</div>
 		
-		<button id='go-back-btn'>Go Back</button>
 
+		<!-- <script src='bundle.js'></script> -->
 		<script type='module' src='../js/post-detail.js'></script>
     </body>
 </html>

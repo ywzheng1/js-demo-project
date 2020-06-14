@@ -5,15 +5,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // Here you write different options and tell Webpack what to do
 module.exports = {
   target: "web",
-  entry: './src/index.js',
+  // entry: './src/index.js',
 
-  // entry: {
-  //   app: './src/index.js',
-  //   adminApp: './src/js/post-detail.js'
-  // },
+  entry: {
+    main: './src/index.js',
+    postDetail: './src/js/post-detail.js'
+  },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js'
   },
 
@@ -33,6 +33,14 @@ module.exports = {
           test: /\.(css|scss)$/i,
           use: ['style-loader', 'css-loader', 'sass-loader'],
         },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+            }
+          ]
+        }
     ]
   },
   plugins: [

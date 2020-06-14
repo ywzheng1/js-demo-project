@@ -1,4 +1,12 @@
-import { fetchPost } from './fetch-post.js';
+// import css from '../index.scss';
+// import { fetchPost } from './fetch-post.js';
+// import { navigation } from './navigation.js';
+
+const navigation = require('./navigation.js');
+const fetchPost = require('./fetch-post.js');
+
+
+navigation();
 
 console.log('postDetail loaded');
 
@@ -23,3 +31,5 @@ const handleGoBack = () => {
 
 const goBackBtn = document.querySelector('#go-back-btn')
 goBackBtn.onclick = () => handleGoBack()
+
+
