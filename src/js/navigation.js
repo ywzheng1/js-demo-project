@@ -23,6 +23,7 @@ const navigation = () => {
 
     const nav = document.querySelector('#navigation');
 
+    // loop through navContent array and display navigation
     navContent.forEach(content => {
         const aTag = document.createElement('a');
         aTag.textContent = content.title;

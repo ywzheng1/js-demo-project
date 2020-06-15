@@ -1,15 +1,12 @@
-// import { generatePostCard } from './generate-post-card.js';
-// import { toggleSpinner } from './toggle-spinner.js';
-// import { showErrorMessage } from './error-message.js';
-
 const generatePostCard = require('./generate-post-card.js');
-const toggleSpinner = require('./toggle-spinner.js');
+const toggleSpinner    = require('./toggle-spinner.js');
 const showErrorMessage = require('./error-message.js');
 
 const fetchPostList = (api, targetNode) => {
     console.log('fetch data loaded!');
 
     const fetchPosts = () => {
+        // display loading message when fetch function started
         toggleSpinner(true, targetNode);
 
         // these endpoints are availabel to fetch posts
@@ -25,21 +22,25 @@ const fetchPostList = (api, targetNode) => {
         fetch(api)
             .then(response => response.json())
             .then(data => generatePostCards(data))
-            // remove spinner once we got the data
+            // remove loading message once we got the data
             .then(() => toggleSpinner(false, targetNode))
             .catch(error => {
+                // remove loading message and display error message
                 toggleSpinner(false, targetNode);
                 showErrorMessage(error, targetNode);
             })
     }
 
-    // fire fetch todo function
+    // fire fetch posts function
     fetchPosts();
 
-    const generatePostCards = (todoData) => {
-        todoData.forEach((data) => {
+    // generate post cards list
+    const generatePostCards = (posts) => {
+        // call generatePostCard function on each post
+        // to generate cards
+        posts.forEach((post) => {
             // pass each post data to this function and generate cards
-            generatePostCard(data, targetNode);
+            generatePostCard(post, targetNode);
         });
     }
 }

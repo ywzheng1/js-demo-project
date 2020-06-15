@@ -1,15 +1,13 @@
-// import { generatePostDetail } from './generate-post-detail.js';
-// import { toggleSpinner } from './toggle-spinner.js';
-// import { showErrorMessage } from './error-message.js';
-
 const generatePostDetail = require('./generate-post-detail.js');
-const toggleSpinner = require('./toggle-spinner.js');
-const showErrorMessage = require('./error-message.js');
+const toggleSpinner      = require('./toggle-spinner.js');
+const showErrorMessage   = require('./error-message.js');
 
 const fetchPost = (api, targetNode) => {
+
     console.log('fetch data loaded!');
 
     const fetchPostDetail = () => {
+        // while fetch post started, display a loading message
         toggleSpinner(true, targetNode);
 
         // some requests was blocked by the reason:
@@ -21,15 +19,16 @@ const fetchPost = (api, targetNode) => {
         fetch(proxyurl + api)
             .then(response => response.json())
             .then(data => generatePostDetail(data, targetNode))
-            // remove spinner once we got the data
+            // remove loading message once we got the data
             .then(() => toggleSpinner(false, targetNode))
             .catch(error => {
+                // remove loading message then display error message
                 toggleSpinner(false);
                 showErrorMessage(error, targetNode);
             })
     }
 
-    // fire fetch todo function
+    // fire fetch post function
     fetchPostDetail();
 
 }

@@ -1,29 +1,22 @@
-// import css from '../index.scss';
-// import { fetchPost } from './fetch-post.js';
-// import { navigation } from './navigation.js';
-
 const navigation = require('./navigation.js');
-const fetchPost = require('./fetch-post.js');
-
+const fetchPost  = require('./fetch-post.js');
 
 navigation();
 
 console.log('postDetail loaded');
 
+// get current url
 const url = window.location.href;
-// get postid from url so we can post to fetch data function
-// to fetch post detail
+// get postid from url so we can post to fetch data function to fetch post detail
 const postId = url.split('=')[1]
-console.log(postId);
 
+// fetch post detail base on the post id
 fetchPost(
     `https://jsonplaceholder.typicode.com/posts?id=${postId}`, 
     '#post-detail-content'
 )
 
-
 // handle go back button
-
 const handleGoBack = () => {
     console.log('go back clicked')
     window.location.href = '/';

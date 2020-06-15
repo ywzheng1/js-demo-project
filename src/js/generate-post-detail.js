@@ -4,19 +4,19 @@ const generatePostDetail = (data, targetNode) => {
 
     const content = document.querySelector(targetNode);
 
-    // title
+    // create title
     const title = document.createElement('h1');
     title.textContent = data[0].title;
     title.setAttribute('class', 'post-detail-title');
     content.appendChild(title);
 
-    // user
+    // create user
     const userElement = document.createElement('p');
     userElement.textContent = `User ID: ${data[0].id}`;
     userElement.setAttribute('class', 'post-detail-author-id');
     content.appendChild(userElement);
 
-    // detail
+    // create detail
     const detailElement = document.createElement('p');
     detailElement.setAttribute('key', data[0].id)
     detailElement.textContent = data[0].body;
